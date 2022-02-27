@@ -1,0 +1,81 @@
+.mrc--text,
+.mrc--badge {
+  hyphens: auto;
+  line-height: 18px;
+  text-overflow: clip;
+}
+.mrc--text.xl,
+.xl.mrc--badge {
+  font-size: 16px;
+}
+.mrc--text.lg,
+.lg.mrc--badge {
+  font-size: 14px;
+}
+.mrc--text.md,
+.md.mrc--badge {
+  font-size: 12px;
+}
+.mrc--text.sm,
+.sm.mrc--badge {
+  font-size: 10.8px;
+}
+.mrc--text.xs,
+.xs.mrc--badge {
+  font-size: 9.2px;
+}
+.mrc--text.mrc--lead,
+.mrc--lead.mrc--badge {
+  font-weight: 300;
+}
+.mrc--text.xl.mrc--lead,
+.xl.mrc--lead.mrc--badge {
+  font-size: 48px;
+  line-height: 72px;
+}
+.mrc--text.lg.mrc--lead,
+.lg.mrc--lead.mrc--badge {
+  font-size: 36px;
+  line-height: 48px;
+}
+.mrc--text.md.mrc--lead,
+.md.mrc--lead.mrc--badge {
+  font-size: 24px;
+  line-height: 32px;
+}
+.mrc--text.sm.mrc--lead,
+.sm.mrc--lead.mrc--badge {
+  font-size: 20px;
+  line-height: 24px;
+}
+.mrc--text.is-link:hover,
+.is-link.mrc--badge:hover {
+  text-decoration: underline;
+}
+.mrc--text.divider,
+.divider.mrc--badge {
+  position: relative;
+}
+.mrc--text.divider:after,
+.divider.mrc--badge:after,
+.mrc--text.divider:before,
+.divider.mrc--badge:before {
+  content: "";
+  border-bottom: solid 1px rgba(10, 10, 10, 0.05);
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  top: -50%;
+}
+.mrc--text.divider:after,
+.divider.mrc--badge:after {
+  left: 55%;
+}
+.mrc--text.divider:before,
+.divider.mrc--badge:before {
+  left: 25%;
+}
+.mrc--text.mrc--ellipsis,
+.mrc--ellipsis.mrc--badge {
+  text-overflow: ellipsis;
+}
