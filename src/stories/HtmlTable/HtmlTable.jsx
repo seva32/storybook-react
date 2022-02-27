@@ -8,9 +8,7 @@ function HtmlTable(props) {
   const {
     classname,
     hideHeader,
-    vAlign,
     onRowClick,
-    compact,
     columns,
     textSize,
     data,
@@ -18,7 +16,6 @@ function HtmlTable(props) {
     stripped,
     stickyHeader,
     emptyContent,
-    isMobile,
     dataKeyAttr,
     ...others
   } = props;
@@ -35,27 +32,19 @@ function HtmlTable(props) {
       : `idxz-${i}`;
   }
 
-  const className = `mrc--table v-${vAlign} ${(stripped && "stripped") || ""} ${
+  const className = `${(stripped && "stripped") || ""} ${
     (stickyHeader && "sticky-header") || ""
-  } ${(compact && "compact") || ""} ${classname}`;
+  } ${classname}`;
 
   return (
     <table className={className} {...others}>
-      {!hideHeader && (
-        <HtmlTableRow
-          isMobile={isMobile}
-          isHeader
-          columns={columns}
-          key="header"
-        />
-      )}
+      {!hideHeader && <HtmlTableRow isHeader columns={columns} key="header" />}
       {data
         .filter((e, i) => {
           return Object.getOwnPropertyNames(e).length !== 0;
         })
         .map((e, i) => (
           <Row
-            isMobile={isMobile}
             key={getkey(e, i)}
             columns={columns}
             textSize={textSize}
@@ -76,11 +65,8 @@ HtmlTable.propTypes = {
   stripped: PropTypes.bool,
   stickyHeader: PropTypes.bool,
   hideHeader: PropTypes.bool,
-  compact: PropTypes.bool,
   emptyContent: PropTypes.element,
   textSize: PropTypes.oneOf(["xl", "lg", "md", "sm", "xs"]),
-  vAlign: PropTypes.oneOf(["top", "center", "bottom"]),
-  isMobile: PropTypes.bool,
 };
 
 /**
@@ -104,13 +90,10 @@ HtmlTable.defaultProps = {
   rowComponent: null,
   stripped: true,
   stickyHeader: false,
-  compact: false,
   emptyContent: null,
   hideHeader: false,
   textSize: "md",
   onRowClick: null,
-  vAlign: "center",
-  isMobile: false,
 };
 
 export { HtmlTable };
