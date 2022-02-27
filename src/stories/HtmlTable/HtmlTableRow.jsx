@@ -1,24 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import "./HtmlTableRow.css";
 
-class HtmlTableRow extends Component {
-  constructor(props) {
-    super(props);
+function HtmlTableRow(props) {
+  const { classname, onClick, isHeader, columns, data, textSize, ...others } =
+    props;
 
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event) {
+  function handleClick(event) {
     if (event.target.onclick === null) {
-      this.props.onClick && this.props.onClick(this.props.data);
+      onClick && onClick(data);
     }
   }
 
-  renderCell(column, data, index) {
+  function renderCell(column, cellData, index) {
     let fontSize;
-    switch (this.props.textSize) {
+    switch (textSize) {
       case "sm":
         fontSize = "12px";
         break;
@@ -38,36 +35,35 @@ class HtmlTableRow extends Component {
     // get cell content
     let content;
 
-    if (this.props.isHeader) {
+    if (isHeader) {
+      // if (column.label.prototype && column.label.prototype.isReactComponent) {
+      //   const CellType = column.label;
+      //   let cellProps = {};
+      //   cellProps[column.componentProp || "data"] = cellData;
+
+      //   content = React.createElement(CellType, cellProps);
+      // } else if (typeof column.label === "function") {
+      //   content = column.label({ ...cellData[column.componentProp] });
+      // } else {
       content = <div>{column.label}</div>;
+      // }
     } else if (!column.content) {
-      content = <div style={{ fontSize }}>{data[column.key]}</div>;
+      content = <div style={{ fontSize }}>{cellData[column.key]}</div>;
     } else if (
       column.content.prototype &&
       column.content.prototype.isReactComponent
     ) {
       const CellType = column.content;
       let cellProps = {};
-      cellProps[column.dataProp || "data"] = data;
+      cellProps[column.componentProp || "data"] = cellData;
 
       content = React.createElement(CellType, cellProps);
     } else {
-      content = column.content(data);
+      content = column.content(cellData);
     }
 
     // get cell
-    let cellClassNames = `
-        column
-        ${column.size && column.size.startsWith("is-") ? column.size : ""}
-        ${(column.size && column.size.endsWith("px") && "is-narrow") || ""}
-        ${(column.align && column.align === "left" && "has-text-left") || ""}
-        ${
-          (column.align && column.align === "center" && "has-text-centered") ||
-          ""
-        }
-        ${(column.align && column.align === "right" && "has-text-right") || ""}
-        ${(column.isMobile && column.isMobile === "true" && "is-mobile") || ""}
-    `;
+    let cellClassNames = ``;
     let style = {};
     if (column.size && column.size.endsWith("px")) style["width"] = column.size;
 
@@ -82,28 +78,17 @@ class HtmlTableRow extends Component {
     );
   }
 
-  render() {
-    const { classname, onClick, isHeader, columns, data, isMobile, ...props } =
-      this.props;
-
-    const classNames = `
-      ${isHeader ? "header--row" : "table--row"}
-      ${classname} columns mrc--table-row
-      ${(isHeader && "mrc--header-row") || ""}
-      ${(onClick !== null && "mrc--highlight-row") || ""} 
-      ${(isMobile && "is-mobile") || ""}
-    `;
-    return (
-      <tr
-        className={classNames}
-        style={{ borderBottomColor: "red" }}
-        onClick={this.props.onClick && this.handleClick}
-        {...props}
-      >
-        {columns.map((c, i) => this.renderCell(c, data, i))}
-      </tr>
-    );
-  }
+  const classNames = `${classname}`;
+  return (
+    <tr
+      className={classNames}
+      style={{ borderBottomColor: "red" }}
+      onClick={onClick && handleClick}
+      {...others}
+    >
+      {columns.map((c, i) => renderCell(c, data, i))}
+    </tr>
+  );
 }
 
 HtmlTableRow.propTypes = {
@@ -120,11 +105,12 @@ HtmlTableRow.propTypes = {
 
 Columns should be in the form of:
 [{
-    key: string,
+    key: string, // key in columns[] MUST match one obj prop in data[{data[column.key]: value}] for null content
     label: string | Element,
-    content: null (takes key as the object getter) | function | Element,
-    size: is-*** (Bulma class) | XXXpx (fixed size in pixels) | null (auto),
-    align: left | center | right,
+    content: null (takes key as the object getter for data[column.key]) | function | Element,
+    size: ,
+    align: ,
+    componentProp: prop name for label/content Element
  },
  ...]
 

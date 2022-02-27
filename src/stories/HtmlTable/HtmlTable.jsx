@@ -73,11 +73,12 @@ HtmlTable.propTypes = {
 
 Columns should be in the form of:
 [{
-    key: string,
+    key: string, // key in columns[] MUST match one obj prop in data[{data[column.key]: value}] for null content
     label: string | Element,
-    content: null (takes key as the object getter) | function | Element,
-    size: is-*** (Bulma class) | XXXpx (fixed size in pixels) | null (auto),
-    align: left | center | right,
+    content: null (takes key as the object getter for data[column.key]) | function | Element,
+    size: ,
+    align: ,
+    componentProp: prop name for label/content Element
  },
  ...]
 
