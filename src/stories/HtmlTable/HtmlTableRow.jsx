@@ -4,8 +4,16 @@ import PropTypes from "prop-types";
 import "./HtmlTableRow.css";
 
 function HtmlTableRow(props) {
-  const { classname, onClick, isHeader, columns, data, textSize, ...others } =
-    props;
+  const {
+    classname,
+    onClick,
+    isHeader,
+    columns,
+    data,
+    textSize,
+    textAlign,
+    ...others
+  } = props;
 
   function handleClick(event) {
     if (event.target.onclick === null) {
@@ -36,17 +44,7 @@ function HtmlTableRow(props) {
     let content;
 
     if (isHeader) {
-      // if (column.label.prototype && column.label.prototype.isReactComponent) {
-      //   const CellType = column.label;
-      //   let cellProps = {};
-      //   cellProps[column.componentProp || "data"] = cellData;
-
-      //   content = React.createElement(CellType, cellProps);
-      // } else if (typeof column.label === "function") {
-      //   content = column.label({ ...cellData[column.componentProp] });
-      // } else {
       content = <div>{column.label}</div>;
-      // }
     } else if (!column.content) {
       content = <div style={{ fontSize }}>{cellData[column.key]}</div>;
     } else if (
@@ -64,7 +62,7 @@ function HtmlTableRow(props) {
 
     // get cell
     let cellClassNames = ``;
-    let style = {};
+    let style = { textAlign };
     if (column.size && column.size.endsWith("px")) style["width"] = column.size;
 
     return (

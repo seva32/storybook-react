@@ -17,6 +17,8 @@ function HtmlTable(props) {
     stickyHeader,
     emptyContent,
     dataKeyAttr,
+    headerTextAlign,
+    bodyTextAlign,
     ...others
   } = props;
 
@@ -32,13 +34,20 @@ function HtmlTable(props) {
       : `idxz-${i}`;
   }
 
-  const className = `${(stripped && "stripped") || ""} ${
-    (stickyHeader && "sticky-header") || ""
-  } ${classname}`;
+  const className = `htmltable ${(stripped && "stripped") || ""} ${classname}`;
 
   return (
     <table className={className} {...others}>
-      {!hideHeader && <HtmlTableRow isHeader columns={columns} key="header" />}
+      {!hideHeader && (
+        <thead className={`${(stickyHeader && "sticky-header") || ""}`}>
+          <HtmlTableRow
+            isHeader
+            columns={columns}
+            key="header"
+            textAlign={headerTextAlign}
+          />
+        </thead>
+      )}
       {data
         .filter((e, i) => {
           return Object.getOwnPropertyNames(e).length !== 0;
@@ -50,6 +59,7 @@ function HtmlTable(props) {
             textSize={textSize}
             onClick={onRowClick}
             data={e}
+            textAlign={bodyTextAlign}
           />
         ))}
     </table>
@@ -67,6 +77,8 @@ HtmlTable.propTypes = {
   hideHeader: PropTypes.bool,
   emptyContent: PropTypes.element,
   textSize: PropTypes.oneOf(["xl", "lg", "md", "sm", "xs"]),
+  headerTextAlign: PropTypes.oneOf(["left", "center", "right"]),
+  bodyTextAlign: PropTypes.oneOf(["left", "center", "right"]),
 };
 
 /**
@@ -95,6 +107,8 @@ HtmlTable.defaultProps = {
   hideHeader: false,
   textSize: "md",
   onRowClick: null,
+  headerTextAlign: "left",
+  bodyTextAlign: "left",
 };
 
 export { HtmlTable };
