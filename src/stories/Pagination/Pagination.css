@@ -1,0 +1,34 @@
+.pagination-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+}
+
+.pagination-nav {
+    border: solid 2px blue;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination-ul {
+    display: flex;
+}
+
+.pagination-li {
+    padding: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
