@@ -1,7 +1,7 @@
 import "./App.css";
 import { Button } from "./stories/Button/index";
 import { Badge } from "./stories/Badge/index";
-import { Table } from "./stories/Table/Table";
+import { HtmlTable } from "./stories/HtmlTable";
 
 import Img from "./assets/img/profile.jpg";
 
@@ -95,7 +95,7 @@ function App() {
           <Button label="Sebs" />
         </div>
         <div>
-          <Table
+          <HtmlTable
             columns={functionalColumns}
             data={simpleElements}
             onRowClick={() => alert("sebas")}

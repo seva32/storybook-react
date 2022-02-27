@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TableRow } from "./TableRow";
-import "./table.css";
+import { HtmlTableRow } from "./HtmlTableRow";
+import "./HtmlTable.css";
 
-function Table(props) {
+function HtmlTable(props) {
   const {
     classname,
     hideHeader,
@@ -23,7 +23,7 @@ function Table(props) {
     ...others
   } = props;
 
-  const Row = rowComponent || TableRow;
+  const Row = rowComponent || HtmlTableRow;
 
   function getkey(e, i) {
     if (e.key) {
@@ -40,9 +40,14 @@ function Table(props) {
   } ${(compact && "compact") || ""} ${classname}`;
 
   return (
-    <div className={className} {...others}>
+    <table className={className} {...others}>
       {!hideHeader && (
-        <TableRow isMobile={isMobile} isHeader columns={columns} key="header" />
+        <HtmlTableRow
+          isMobile={isMobile}
+          isHeader
+          columns={columns}
+          key="header"
+        />
       )}
       {data
         .filter((e, i) => {
@@ -58,11 +63,11 @@ function Table(props) {
             data={e}
           />
         ))}
-    </div>
+    </table>
   );
 }
 
-Table.propTypes = {
+HtmlTable.propTypes = {
   classname: PropTypes.string,
   columns: PropTypes.array,
   data: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
@@ -92,7 +97,7 @@ Columns should be in the form of:
 
 **/
 
-Table.defaultProps = {
+HtmlTable.defaultProps = {
   classname: "",
   columns: [],
   data: [],
@@ -108,4 +113,4 @@ Table.defaultProps = {
   isMobile: false,
 };
 
-export { Table };
+export { HtmlTable };
