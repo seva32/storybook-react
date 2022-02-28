@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useCallback } from "react";
 
 import "./Pagination.css";
@@ -29,9 +30,10 @@ function Pagination(props) {
     totalItems = 0,
     pageLimit = 30,
     pageNeighbours: neighbours = 0,
+    buttonStyle = true,
     onPageChanged,
   } = props;
-  const [pageNeighbours, setPageNeighbours] = useState(
+  const [pageNeighbours] = useState(
     neighbours ? Math.max(0, Math.min(neighbours, 2)) : 0
   );
   const totalPages = Math.ceil(totalItems / pageLimit);
@@ -128,40 +130,69 @@ function Pagination(props) {
       >
         <ul className="pagination-ul">
           {pages.map((page, index) => {
+            const isSelected = page === currentPage;
             if (page === LEFT_PAGE)
               return (
-                <li key={index} className="pagination-li">
-                  <a href="#" aria-label="Previous" onClick={handleMoveLeft}>
-                    <div aria-hidden="true" style={{ lineHeight: "20px" }}>
-                      &laquo;
+                <li
+                  key={index}
+                  className={`pagination-li ${
+                    (buttonStyle && "button-style") || ""
+                  }`}
+                >
+                  <button
+                    className="link-button"
+                    aria-label="Previous"
+                    onClick={handleMoveLeft}
+                  >
+                    <div
+                      aria-hidden="true"
+                      className={`${(isSelected && "selected") || ""}`}
+                    >
+                      &#10092;&#10092;
                     </div>
                     <span className="sr-only">Previous</span>
-                  </a>
+                  </button>
                 </li>
               );
 
             if (page === RIGHT_PAGE)
               return (
-                <li key={index} className="pagination-li">
-                  <a href="#" aria-label="Next" onClick={handleMoveRight}>
-                    <div aria-hidden="true" style={{ lineHeight: "20px" }}>
-                      &raquo;
+                <li
+                  key={index}
+                  className={`pagination-li ${
+                    (buttonStyle && "button-style") || ""
+                  }`}
+                >
+                  <button
+                    className="link-button"
+                    aria-label="Next"
+                    onClick={handleMoveRight}
+                  >
+                    <div
+                      aria-hidden="true"
+                      className={`${(isSelected && "selected") || ""}`}
+                    >
+                      &#10093;&#10093;
                     </div>
                     <span className="sr-only">Next</span>
-                  </a>
+                  </button>
                 </li>
               );
 
             return (
               <li
                 key={index}
-                className={`${
-                  currentPage === page ? "transform scale-150" : ""
-                } px-2`}
+                className={`pagination-li ${
+                  (buttonStyle && "button-style") || ""
+                }`}
               >
-                <a href="#" onClick={handleClick(page)}>
+                <button
+                  style={{ transform: isSelected ? "scale(1.2)" : "none" }}
+                  className={`link-button ${(isSelected && "selected") || ""}`}
+                  onClick={handleClick(page)}
+                >
                   {page}
-                </a>
+                </button>
               </li>
             );
           })}

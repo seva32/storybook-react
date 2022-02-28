@@ -1,34 +1,67 @@
 .pagination-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 2rem;
 }
 
 .pagination-nav {
-    border: solid 2px blue;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: solid 2px blue;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination-ul {
-    display: flex;
+  display: flex;
 }
 
 .pagination-li {
-    padding: 2px;
+  padding: 2px;
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  font-family: arial, sans-serif;
+  color: #069;
+  /* text-decoration: underline; */
+  cursor: pointer;
+  min-width: 1.2rem;
+  max-width: 1.2rem;
+  min-height: 1rem;
+}
+
+.button-style {
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  background-color: rgb(143, 215, 252);
+  border-radius: 4px;
+}
+
+.button-style button,
+.button-style button div {
+  color: whitesmoke;
+}
+
+.button-style button.selected,
+.button-style button div.selected {
+  color: rgb(63, 77, 241);
+}
+
+.pagination-li:not(.button-style) button.selected {
+  color: rgb(12, 14, 14);
 }
