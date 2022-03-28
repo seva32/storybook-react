@@ -10,23 +10,17 @@ export const truncate = (str, max) => {
 
 const Badge = ({
   children = "Children",
-  classes,
   classname,
   color,
   icon,
-  invert,
   size,
   maxLength,
-  lead,
+  iconRight,
   ...other
 }) => {
-  const classNames = `
-    mrc--badge
-    ${size}
-    ${(invert && "mrc--inverted") || ""}
-    ${(lead && "mrc--lead") || ""}
-    ${classname}
-  `;
+  const classNames = `badge ellipsis divider ${size} ${classname} ${color} ${
+    iconRight ? "icon-right" : ""
+  }`;
 
   let _children = children;
   let text = null;
@@ -47,8 +41,8 @@ const Badge = ({
   }
 
   return (
-    <span className={classNames} aria-label={children} data-balloon-pos={"top"}>
-      {icon && <div>??</div>}
+    <span className={classNames} aria-label={children} {...other}>
+      {icon && <div className="icon">{icon}</div>}
       {maxLength > 0 ? text : _children}
     </span>
   );
@@ -56,26 +50,21 @@ const Badge = ({
 
 Badge.propTypes = {
   children: PropTypes.node,
-  classes: PropTypes.any,
   className: PropTypes.string,
-  color: PropTypes.string,
+  color: PropTypes.oneOf(["green", "violet"]),
   icon: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  invert: PropTypes.bool,
-  lead: PropTypes.bool,
   size: PropTypes.oneOf(["xl", "lg", "md", "sm", "xs"]),
   maxLength: PropTypes.number,
 };
 
 Badge.defaultProps = {
   children: null,
-  classes: null,
   className: null,
-  color: "primary",
-  icon: null,
-  invert: false,
-  lead: false,
+  iconRight: false,
+  color: "green",
   size: "md",
   maxLength: -1,
+  icon: null,
 };
 
 export default Badge;

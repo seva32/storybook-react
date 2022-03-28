@@ -1,81 +1,36 @@
-.mrc--text,
-.mrc--badge {
+.badge {
   hyphens: auto;
-  line-height: 18px;
+  line-height: var(--text-line-height);
   text-overflow: clip;
-}
-.mrc--text.xl,
-.xl.mrc--badge {
-  font-size: 16px;
-}
-.mrc--text.lg,
-.lg.mrc--badge {
-  font-size: 14px;
-}
-.mrc--text.md,
-.md.mrc--badge {
-  font-size: 12px;
-}
-.mrc--text.sm,
-.sm.mrc--badge {
-  font-size: 10.8px;
-}
-.mrc--text.xs,
-.xs.mrc--badge {
-  font-size: 9.2px;
-}
-.mrc--text.mrc--lead,
-.mrc--lead.mrc--badge {
   font-weight: 300;
+  display: flex;
 }
-.mrc--text.xl.mrc--lead,
-.xl.mrc--lead.mrc--badge {
-  font-size: 48px;
-  line-height: 72px;
+.badge.icon-right {
+  /* flex-direction: row-reverse; */
 }
-.mrc--text.lg.mrc--lead,
-.lg.mrc--lead.mrc--badge {
-  font-size: 36px;
-  line-height: 48px;
+.badge.xl {
+  font-size: var(--xl-font-size);
 }
-.mrc--text.md.mrc--lead,
-.md.mrc--lead.mrc--badge {
-  font-size: 24px;
-  line-height: 32px;
+.badge.lg {
+  font-size: var(--lg-font-size);
 }
-.mrc--text.sm.mrc--lead,
-.sm.mrc--lead.mrc--badge {
-  font-size: 20px;
-  line-height: 24px;
+.badge.md {
+  font-size: var(--md-font-size);
 }
-.mrc--text.is-link:hover,
-.is-link.mrc--badge:hover {
-  text-decoration: underline;
+.badge.sm {
+  font-size: var(--sm-font-size);
 }
-.mrc--text.divider,
-.divider.mrc--badge {
-  position: relative;
+.badge.xs {
+  font-size: var(--xs-font-size);
 }
-.mrc--text.divider:after,
-.divider.mrc--badge:after,
-.mrc--text.divider:before,
-.divider.mrc--badge:before {
-  content: "";
-  border-bottom: solid 1px rgba(10, 10, 10, 0.05);
-  width: 20%;
-  height: 100%;
-  position: absolute;
-  top: -50%;
+.green {
+  background-color: aquamarine;
 }
-.mrc--text.divider:after,
-.divider.mrc--badge:after {
-  left: 55%;
+.violet {
+  background-color: rgb(197, 184, 252);
 }
-.mrc--text.divider:before,
-.divider.mrc--badge:before {
-  left: 25%;
-}
-.mrc--text.mrc--ellipsis,
-.mrc--ellipsis.mrc--badge {
-  text-overflow: ellipsis;
+.badge .icon {
+  display: inline;
+  padding-right: var(--unit) / 4;
+  padding-left: var(--unit) / 4;
 }
