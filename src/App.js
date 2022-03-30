@@ -50,7 +50,7 @@ function App() {
         <div className="section">
           <ul style={{ display: "flex", flexDirection: "column" }}>
             {currentItems?.map((item, i) => (
-              <li key={item.name}>{item.name}</li>
+              <li key={`${item.name}-${i}`}>{item.name}</li>
             ))}
           </ul>
         </div>
