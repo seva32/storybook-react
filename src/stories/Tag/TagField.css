@@ -1,0 +1,111 @@
+/* .tagsField-container {
+  .tagsField-pillBucket {
+    z-index: var(--cx-zIndex-1);
+  }
+}
+
+.tagsField-flyout {
+  .cx-optionsMenu {
+    max-height: 130px;
+    overflow-y: auto;
+  }
+
+  .cx-optionsMenu-item {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .newKeyword {
+    padding: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+} */
+
+.tagsField-pills-selected {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.tagsField-subheader {
+  padding-bottom: var(--cx-spacing-2x);
+}
+
+.tagsField-row {
+  min-width: 100%;
+}
+
+.tagsField-input {
+  flex-grow: 1;
+  margin-right: 12px;
+  align-self: flex-end;
+}
+
+.tagsField-pill-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    padding-left: 5px;
+  }
+}
+
+.tagsField-wrapper {
+  display: inline-block;
+  text-align: left;
+  min-width: 100%;
+  word-break: break-word;
+  text-align: left;
+}
+
+.tagsField-columns {
+  display: flex;
+  gap: 3em;
+  flex-flow: row wrap;
+}
+
+.tagsField-column {
+  flex: 1 1 0%;
+  word-break: break-word;
+  position: relative;
+  min-width: 350px;
+}
+
+.tagsField-selection-pill {
+  padding: var(--cx-spacing-3x);
+  min-width: 48%;
+  border-radius: 43px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--cx-spacing-3x);
+}
+
+.tagsField-pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: var(--cx-spacing-half);
+  padding: var(--cx-spacing-half) 0;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+
+.tagsField-custom-tags {
+  justify-content: flex-start;
+  padding-top: 15px;
+
+  button {
+    margin-right: var(--cx-spacing-1x);
+  }
+}
+
+.tagsField-custom-tags button {
+  margin-right: var(--cx-spacing-1x);
+}

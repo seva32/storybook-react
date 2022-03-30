@@ -4,6 +4,7 @@ import "./App.css";
 import { Button } from "./stories/Button/index";
 import { HtmlTable } from "./stories/HtmlTable";
 import { Pagination } from "./stories/Pagination";
+import { TagsField } from "./stories/Tag/TagField";
 import { default as data } from "./stories/Pagination/MOCK_DATA.json";
 
 import {
@@ -15,6 +16,7 @@ function App() {
   const [itemsList] = React.useState(data);
 
   const [currentItems, setCurrentItems] = React.useState([]);
+  const [fieldValue, setFieldValue] = React.useState(null);
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -60,6 +62,14 @@ function App() {
             pageLimit={10}
             pageNeighbours={1}
             onPageChanged={onPageChanged}
+          />
+        </div>
+        <div className="section">
+          <TagsField
+            customTags={["tag1", "tag2"]}
+            onChange={() => {}}
+            placeholder={""}
+            setFieldValue={setFieldValue}
           />
         </div>
       </div>
