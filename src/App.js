@@ -5,6 +5,7 @@ import { Button } from "./stories/Button/index";
 import { HtmlTable } from "./stories/HtmlTable";
 import { Pagination } from "./stories/Pagination";
 import { TagsField } from "./stories/Tag/TagField";
+import { MultiselectTag } from "./stories/Tag/MultiselectTag";
 import { default as data } from "./stories/Pagination/MOCK_DATA.json";
 
 import {
@@ -17,6 +18,11 @@ function App() {
 
   const [currentItems, setCurrentItems] = React.useState([]);
   const [fieldValue, setFieldValue] = React.useState(null);
+  const [selectedTags, setSelectedTags] = React.useState(["tag1"]);
+
+  React.useEffect(() => {
+    console.log(selectedTags);
+  }, [selectedTags]);
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -65,6 +71,11 @@ function App() {
           />
         </div>
         <div className="section">
+          <MultiselectTag
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+            defaultTags={["tag1", "tag2", "tag3"]}
+          />
           <TagsField
             customTags={["tag1", "tag2"]}
             onChange={() => {}}
