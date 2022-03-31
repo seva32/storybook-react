@@ -153,7 +153,6 @@ export function TagsField({
           aria-autocomplete="list"
           aria-controls="pills-name-text-input"
           label="Add your own tags"
-          labelIsHidden
           onChange={() => state.inputValue}
           onFocus={focusInput}
           placeholder="Add your custom tags"
@@ -163,9 +162,9 @@ export function TagsField({
           onKeyUp={clearInvalidChars}
           ref={assignInputRef}
         />
-        <button onClick={handleSubmit} size="lg">
+        <div onClick={handleSubmit} role="button" style={{ display: "inline" }}>
           Add Tag
-        </button>
+        </div>
       </div>
 
       <div aria-label="options" className="tagfield-list" role="list">
@@ -173,7 +172,13 @@ export function TagsField({
           <SelectionPill key={`${idx}-${chip}`}>
             <div className="tagfield-pill-selection">
               {chip}
-              <button onClick={() => deleteChip(chip)}>X</button>
+              <div
+                onClick={() => deleteChip(chip)}
+                role="button"
+                style={{ display: "inline" }}
+              >
+                X
+              </div>
             </div>
           </SelectionPill>
         ))}

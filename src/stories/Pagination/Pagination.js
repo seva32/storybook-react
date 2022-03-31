@@ -48,7 +48,6 @@ function Pagination(props) {
         pageLimit,
       };
       setCurrentPage(updatedCurrentPage);
-      console.log("goto ", updatedCurrentPage, paginationData);
       onPageChanged && onPageChanged(paginationData);
     },
     [totalItems, currentPage]

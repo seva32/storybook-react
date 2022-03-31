@@ -34,14 +34,14 @@ export const functionalColumns = [
     content: Badge,
   },
   {
-    key: "statusComp",
+    key: "statuscomp",
     label: "Status Composite",
     size: "is-2",
     content: (data) => (
       <Button
         size="medium"
         primary
-        label={data.statusComp ? data.statusComp : "empty"}
+        label={data.statuscomp ? data.statuscomp : "empty"}
       />
     ),
   },
@@ -53,7 +53,7 @@ export const simpleElements = [
     age: 45,
     address: "Fake Av. 5678, 5E",
     pic: Img,
-    statusComp: "First",
+    statuscomp: "First",
     status: "Seb",
   },
   {

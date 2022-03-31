@@ -48,20 +48,22 @@ function HtmlTable(props) {
           />
         </thead>
       )}
-      {data
-        .filter((e, i) => {
-          return Object.getOwnPropertyNames(e).length !== 0;
-        })
-        .map((e, i) => (
-          <Row
-            key={getkey(e, i)}
-            columns={columns}
-            textSize={textSize}
-            onClick={onRowClick}
-            data={e}
-            textAlign={bodyTextAlign}
-          />
-        ))}
+      <tbody>
+        {data
+          .filter((e, i) => {
+            return Object.getOwnPropertyNames(e).length !== 0;
+          })
+          .map((e, i) => (
+            <Row
+              key={getkey(e, i)}
+              columns={columns}
+              textSize={textSize}
+              onClick={onRowClick}
+              data={e}
+              textAlign={bodyTextAlign}
+            />
+          ))}
+      </tbody>
     </table>
   );
 }
