@@ -7,6 +7,8 @@ import { Pagination } from "./stories/Pagination";
 import { TagsField } from "./stories/Tag/TagField";
 import { MultiselectTag } from "./stories/Tag/MultiselectTag";
 import { default as data } from "./stories/Pagination/MOCK_DATA.json";
+import { SVGContainer } from "./stories/SVGContainer";
+import { ReactComponent as FinalImg } from "./assets/final-screen.svg";
 
 import {
   functionalColumns,
@@ -19,10 +21,6 @@ function App() {
   const [currentItems, setCurrentItems] = React.useState([]);
   const [fieldValue, setFieldValue] = React.useState(null);
   const [selectedTags, setSelectedTags] = React.useState(["tag1"]);
-
-  React.useEffect(() => {
-    console.log(selectedTags);
-  }, [selectedTags]);
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -83,6 +81,9 @@ function App() {
             setFieldValue={setFieldValue}
           />
         </div>
+        <SVGContainer width="20%">
+          <FinalImg />
+        </SVGContainer>
       </div>
     </div>
   );
