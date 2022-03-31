@@ -1,0 +1,49 @@
+<svg  viewBox="0 0 386 147" preserveAspectRatio="xMinYMin meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M208.471 134.124H276.717V12H186.92V24.5716" stroke="black" stroke-width="3"/>
+<circle cx="345.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="345.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="345.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="355.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="355.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="355.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="365.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="365.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="365.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="375.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="375.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="375.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="305.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="305.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="305.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="315.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="315.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="315.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="325.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="325.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="325.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="335.5" cy="42.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="335.5" cy="52.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<circle cx="335.5" cy="62.5" r="2.5" fill="var(--cx-color-grey120)"/>
+<path d="M10.493 73L2.32227 81.1808" stroke="black" stroke-width="3"/>
+<path d="M26.7087 73L2 97.7392" stroke="black" stroke-width="3"/>
+<path d="M42.9255 73L2 113.976" stroke="black" stroke-width="3"/>
+<path d="M50.4028 129.643L58.5736 121.464" stroke="black" stroke-width="3"/>
+<path d="M34.187 129.643L58.8957 104.903" stroke="black" stroke-width="3"/>
+<path d="M17.9702 129.642L58.8958 88.668" stroke="black" stroke-width="3"/>
+<path d="M59.1417 73L2.00098 130.211" stroke="black" stroke-width="3"/>
+<path d="M134.838 115.267C134.838 97.9092 148.909 83.8379 166.267 83.8379V83.8379C183.625 83.8379 197.696 97.9092 197.696 115.267V144.9H134.838V115.267Z" stroke="black" stroke-width="3"/>
+<path d="M132 98.7561C130.082 98.2625 128.072 98 126 98C112.745 98 102 108.745 102 122V145H128.5" stroke="black" stroke-width="3"/>
+<circle cx="167.165" cy="51.5104" r="23.3473" stroke="black" stroke-width="3"/>
+<circle cx="126.5" cy="74.5" r="15.5" stroke="black" stroke-width="3"/>
+<g style="mix-blend-mode:multiply">
+<circle cx="172" cy="55" r="24" fill="var(--cx-color-blue80)"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<circle cx="122.5" cy="72.5" r="15.5" fill="var(--cx-color-blue80)"/>
+</g>
+<path d="M231.061 54.9393C230.475 54.3536 229.525 54.3536 228.939 54.9393L219.393 64.4853C218.808 65.0711 218.808 66.0208 219.393 66.6066C219.979 67.1924 220.929 67.1924 221.515 66.6066L230 58.1213L238.485 66.6066C239.071 67.1924 240.021 67.1924 240.607 66.6066C241.192 66.0208 241.192 65.0711 240.607 64.4853L231.061 54.9393ZM231.5 95L231.5 56L228.5 56L228.5 95L231.5 95Z" fill="black"/>
+<rect x="67" y="2.61523" width="26" height="26" transform="rotate(45 67 2.61523)" fill="white" stroke="var(--cx-color-grey120)" stroke-width="3"/>
+<rect x="330.692" y="99.6924" width="10.8787" height="10.8787" transform="rotate(45 330.692 99.6924)" fill="var(--cx-color-grey120)" stroke="var(--cx-color-grey120)" stroke-width="3"/>
+<circle cx="378.5" cy="101.5" r="5.5" stroke="var(--cx-color-grey120)" stroke-width="3"/>
+<circle cx="358.5" cy="125.5" r="9.5" stroke="var(--cx-color-grey120)" stroke-width="3"/>
+</svg>
