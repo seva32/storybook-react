@@ -9,6 +9,8 @@ import { MultiselectTag } from "./stories/Tag/MultiselectTag";
 import { default as data } from "./stories/Pagination/MOCK_DATA.json";
 import { SVGContainer } from "./stories/SVGContainer";
 import { ReactComponent as FinalImg } from "./assets/final-screen.svg";
+import { DnD } from "./stories/DnD";
+import { DnDComponent } from "./stories/DnD/DnDComponent";
 
 import {
   functionalColumns,
@@ -21,6 +23,13 @@ function App() {
   const [currentItems, setCurrentItems] = React.useState([]);
   const [fieldValue, setFieldValue] = React.useState(null);
   const [selectedTags, setSelectedTags] = React.useState(["tag1"]);
+
+  // must include and 'id' prop
+  const dndData = [
+    { id: "axo", content: "Display me first" },
+    { id: "oxe", content: "Display me second" },
+    { id: "rux", content: "Display me nth" },
+  ];
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -84,6 +93,9 @@ function App() {
         <SVGContainer width="20%">
           <FinalImg />
         </SVGContainer>
+        <div className="section">
+          <DnD component={DnDComponent} data={dndData} />
+        </div>
       </div>
     </div>
   );

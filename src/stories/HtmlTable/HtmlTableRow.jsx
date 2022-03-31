@@ -95,7 +95,6 @@ HtmlTableRow.propTypes = {
   isHeader: PropTypes.bool,
   textSize: PropTypes.oneOf(["xl", "lg", "md", "sm", "xs"]),
   onClick: PropTypes.func,
-  isMobile: PropTypes.bool,
   classname: PropTypes.string,
 };
 
@@ -120,7 +119,6 @@ HtmlTableRow.defaultProps = {
   isHeader: false,
   textSize: "md",
   onClick: null,
-  isMobile: false,
   classname: "",
 };
 
