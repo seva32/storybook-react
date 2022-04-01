@@ -12,6 +12,7 @@ import { ReactComponent as FinalImg } from "./assets/final-screen.svg";
 import { DnD } from "./stories/DnD";
 import { DnDComponent } from "./stories/DnD/DnDComponent";
 import { ToastNotification } from "./stories/Toast";
+import { TypeAheadDropDown } from "./stories/Typeahead";
 
 import {
   functionalColumns,
@@ -25,6 +26,7 @@ function App() {
   const [fieldValue, setFieldValue] = React.useState(null);
   const [selectedTags, setSelectedTags] = React.useState(["tag1"]);
   const [notif, setnotif] = React.useState();
+  const [typeahead, setTypeahead] = React.useState();
 
   // must include and 'id' prop
   const dndData = [
@@ -36,12 +38,12 @@ function App() {
   React.useEffect(() => {
     setnotif({
       title: "Error",
-      message: `Profile deletion failed`,
+      message: `Profile deletion failed in ${typeahead}`,
       timeout: 2500,
       type: "error",
       index: Date.now(),
     });
-  }, []);
+  }, [typeahead]);
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -110,6 +112,9 @@ function App() {
         </div>
         <div className="section">
           <ToastNotification notif={notif} position="br" />
+        </div>
+        <div className="section">
+          <TypeAheadDropDown setSelected={setTypeahead} />
         </div>
       </div>
     </div>

@@ -1,0 +1,50 @@
+.typeahead-drop-down {
+  width: 100%;
+  /* border: 1px solid var(--grey-55); */
+  font-family: Times;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.typeahead-drop-down input {
+  width: 100%;
+  border: 1px solid var(--grey-55);
+  font-family: Times;
+  font-size: 14px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  outline: none;
+  border-radius: 4px;
+}
+
+.typeahead-drop-down input:focus {
+  border: 1px solid var(--peacock);
+}
+.typeahead-drop-down ul::before {
+  content: "";
+}
+
+.typeahead-drop-down ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--grey-55);
+  border-radius: 4px;
+  position: absolute;
+  z-index: 100;
+  background: white;
+  width: 41.7%;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.typeahead-drop-down li {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.typeahead-drop-down li:hover {
+  background: var(--grey-10);
+  text-decoration: underline;
+}
