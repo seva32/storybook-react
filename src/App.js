@@ -11,6 +11,7 @@ import { SVGContainer } from "./stories/SVGContainer";
 import { ReactComponent as FinalImg } from "./assets/final-screen.svg";
 import { DnD } from "./stories/DnD";
 import { DnDComponent } from "./stories/DnD/DnDComponent";
+import { ToastNotification } from "./stories/Toast";
 
 import {
   functionalColumns,
@@ -23,6 +24,7 @@ function App() {
   const [currentItems, setCurrentItems] = React.useState([]);
   const [fieldValue, setFieldValue] = React.useState(null);
   const [selectedTags, setSelectedTags] = React.useState(["tag1"]);
+  const [notif, setnotif] = React.useState();
 
   // must include and 'id' prop
   const dndData = [
@@ -30,6 +32,16 @@ function App() {
     { id: "oxe", content: "Display me second" },
     { id: "rux", content: "Display me nth" },
   ];
+
+  React.useEffect(() => {
+    setnotif({
+      title: "Error",
+      message: `Profile deletion failed`,
+      timeout: 2500,
+      type: "error",
+      index: Date.now(),
+    });
+  }, []);
 
   function onPageChanged(paginationData) {
     const { currentPage, pageLimit } = paginationData;
@@ -95,6 +107,9 @@ function App() {
         </SVGContainer>
         <div className="section">
           <DnD component={DnDComponent} data={dndData} />
+        </div>
+        <div className="section">
+          <ToastNotification notif={notif} position="br" />
         </div>
       </div>
     </div>
