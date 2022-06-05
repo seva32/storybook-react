@@ -13,6 +13,7 @@ import { DnD } from "./stories/DnD";
 import { DnDComponent } from "./stories/DnD/DnDComponent";
 import { ToastNotification } from "./stories/Toast";
 import { TypeAheadDropDown } from "./stories/Typeahead";
+import { Accordion, Tabs, items, singleReducer } from "./stories/Accordion";
 
 import {
   functionalColumns,
@@ -115,6 +116,12 @@ function App() {
         </div>
         <div className="section">
           <TypeAheadDropDown setSelected={setTypeahead} />
+        </div>
+        <div className="section">
+          <Accordion items={items} reducer={singleReducer} />
+        </div>
+        <div className="section">
+          <Tabs items={items} position="above" />
         </div>
       </div>
     </div>
