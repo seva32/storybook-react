@@ -1,0 +1,157 @@
+.collapsible-open,
+.collapsible-open-no_delay {
+  animation-name: spinHalfAround;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.collapsible-open-no_delay {
+  animation-duration: 0ms;
+}
+
+.collapsible-close,
+.collapsible-close-no_delay {
+  animation-name: spinHalfAroundBack;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.collapsible-close-no_delay {
+  animation-duration: 0ms;
+}
+
+.collapsible-content,
+.collapsible-content-no_delay {
+  overflow: hidden;
+  transition: height 0.5s ease-out, opacity 0.5s ease-out;
+  height: auto;
+  opacity: 0;
+}
+
+.collapsible-content-no_delay {
+  transition: height 0s ease-out, opacity 0s ease-out;
+}
+
+.level {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.level:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.level-item.button-container button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 769px), print {
+  .level {
+    display: flex;
+  }
+  .level > .level-item {
+    flex-grow: 1;
+  }
+}
+
+.level-item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.level-item .title,
+.level-item .subtitle {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .level-item:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.level-left,
+.level-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+@media screen and (min-width: 769px), print {
+  .level-left .level-item:not(:last-child),
+  .level-right .level-item:not(:last-child) {
+    margin-right: 0.75rem;
+  }
+}
+
+.level-left {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .level-left + .level-right {
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 769px), print {
+  .level-left {
+    display: flex;
+  }
+}
+
+.level-right {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 769px), print {
+  .level-right {
+    display: flex;
+  }
+}
+
+@-webkit-keyframes spinHalfAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes spinHalfAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes spinHalfAroundBack {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinHalfAroundBack {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
